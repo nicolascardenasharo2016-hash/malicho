@@ -1,0 +1,83 @@
+====================================================================
+1. ANÁLISIS DE CONSUMO
+====================================================================
+Consumo anual (suma 12 meses móviles)   : 1149 kWh/año
+Consumo anual (prom. boleta 93,53x12)   : 1122 kWh/año
+Consumo diario promedio                 : 3.15 kWh/día
+Mes de mayor consumo (Ene)              : 134 kWh
+Mes de menor consumo (Ago)              : 56 kWh
+
+====================================================================
+2. RECURSO SOLAR Y DIMENSIONAMIENTO FV
+====================================================================
+HSP promedio anual (plano 35°)          : 3.3 kWh/m2/día
+Performance Ratio (PR)                  : 0.78
+Rendimiento específico (yield)          : 940 kWh/kWp/año
+Potencia FV teórica (100% consumo)      : 1.19 kWp
+Paneles seleccionados                   : 3 x 550 W
+Potencia instalada                      : 1.65 kWp
+Generación anual estimada (año 1)       : 1550 kWh/año
+Cobertura vs consumo                    : 138 %
+
+====================================================================
+3. INVERSOR Y BATERÍA
+====================================================================
+Inversor híbrido                        : 3.0 kW
+Ratio DC/AC                             : 0.55
+Batería LiFePO4 nominal                 : 5.12 kWh (48V/100Ah)
+Energía útil batería (DoD 90%)        : 4.61 kWh
+Autonomía aprox. (sin sol)              : 1.5 días de consumo
+
+====================================================================
+4. BALANCE ENERGÉTICO ANUAL (NET BILLING)
+====================================================================
+Energía autoconsumida (FV+batería)      : 1010 kWh/año
+Energía importada de la red             : 112 kWh/año
+Energía inyectada (excedente)           : 540 kWh/año
+
+====================================================================
+5. VALORIZACIÓN (CAPEX) [CLP]
+====================================================================
+-- Materiales y equipos --
+   Paneles 550W monocristalino (x3)                          : $    225,000
+   Inversor híbrido 3 kW (MPPT, apto litio)                  : $    650,000
+   Batería LiFePO4 48V 100Ah (5,12 kWh)                      : $  1,400,000
+   Estructura de montaje aluminio                            : $    150,000
+   Cableado solar, MC4 y canalización                        : $    120,000
+   Tablero + protecciones DC/AC (fusibles, breakers, DPS, diferencial): $    180,000
+   Puesta a tierra (SPT)                                     : $    120,000
+   Medidor bidireccional / adecuaciones                      : $     80,000
+   Materiales menores y ferretería                           : $     80,000
+   SUBTOTAL MATERIALES                                       : $  3,005,000
+-- Recursos humanos --
+   Proyecto eléctrico + tramitación TE4/SEC (ing. autorizado): $    350,000
+   Instalación (instalador SEC clase D, 2 pers. x 3 días)    : $    600,000
+   Puesta en marcha, pruebas y capacitación                  : $    150,000
+   SUBTOTAL RECURSOS HUMANOS                                 : $  1,100,000
+   Contingencia (5%)                                         : $    205,250
+   INVERSIÓN TOTAL (CAPEX)                                   : $  4,310,250
+
+====================================================================
+6. EVALUACIÓN ECONÓMICA (net billing con batería)
+====================================================================
+Precio energía evitada (autoconsumo)    : $ 230/kWh
+Precio inyección (net billing)          : $ 80/kWh
+Escalación tarifaria                    : 4% anual
+Tasa de descuento                       : 8%
+Horizonte                               : 20 años
+Beneficio neto año 1                    : $ 225,485
+VAN (8%)                                : $ -2,032,020
+TIR                                     : 1.4 %
+PRI simple                              : 18.2 años
+PRI descontado: > horizonte
+
+--------------------------------------------------------------------
+ESCENARIO B (referencia): FV SIN batería
+--------------------------------------------------------------------
+CAPEX                                   : $ 2,710,250
+Beneficio neto año 1                    : $ 149,750
+VAN (8%)                                : $ -823,699
+TIR                                     : 4.0 %
+PRI simple                              : 14.4 años
+
+[Cálculos completados]

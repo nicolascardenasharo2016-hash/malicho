@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Informe Prefactibilidad FV - Puerto Montt</title>
+<style>
+  :root{
+    --azul:#1b3a6b; --azul2:#2b5aa0; --gris:#4a4a4a; --gris-claro:#f4f6f9;
+    --verde:#1f7a3d; --rojo:#b02a2a; --amarillo:#b8860b; --borde:#d6dbe3;
+  }
+  *{box-sizing:border-box;}
+  body{
+    font-family:"Segoe UI",Arial,Helvetica,sans-serif; color:var(--gris);
+    line-height:1.55; margin:0; background:#e9edf2;
+  }
+  .page{
+    max-width:820px; margin:24px auto; background:#fff; padding:56px 60px;
+    box-shadow:0 2px 14px rgba(0,0,0,.12);
+  }
+  h1{color:var(--azul); font-size:26px; margin:0 0 4px; line-height:1.25;}
+  h2{color:var(--azul); font-size:19px; margin:34px 0 10px;
+     border-bottom:3px solid var(--azul); padding-bottom:5px;}
+  h3{color:var(--azul2); font-size:15.5px; margin:20px 0 8px;}
+  .subtitle{color:var(--azul2); font-size:16px; font-weight:600; margin:0 0 18px;}
+  .meta{background:var(--gris-claro); border-left:4px solid var(--azul2);
+        padding:14px 18px; border-radius:4px; font-size:13.5px; margin:18px 0 8px;}
+  .meta b{color:var(--azul);}
+  table{border-collapse:collapse; width:100%; margin:14px 0; font-size:13.5px;}
+  th,td{border:1px solid var(--borde); padding:7px 10px; text-align:left;}
+  th{background:var(--azul); color:#fff; font-weight:600;}
+  tr:nth-child(even) td{background:var(--gris-claro);}
+  .num td:last-child, .num td:nth-child(2){text-align:right;}
+  code,pre{font-family:"Consolas","Courier New",monospace;}
+  pre{background:#0f1b2d; color:#e6edf5; padding:14px 16px; border-radius:6px;
+      font-size:12.5px; overflow-x:auto; line-height:1.5;}
+  .callout{border-radius:6px; padding:14px 18px; margin:16px 0; font-size:13.5px;}
+  .callout.ok{background:#eaf6ee; border-left:4px solid var(--verde);}
+  .callout.warn{background:#fdf6e3; border-left:4px solid var(--amarillo);}
+  .callout.bad{background:#fbeaea; border-left:4px solid var(--rojo);}
+  .ok-t{color:var(--verde); font-weight:700;}
+  .bad-t{color:var(--rojo); font-weight:700;}
+  .warn-t{color:var(--amarillo); font-weight:700;}
+  .kpi{display:flex; flex-wrap:wrap; gap:12px; margin:16px 0;}
+  .kpi div{flex:1 1 150px; background:var(--gris-claro); border:1px solid var(--borde);
+           border-radius:8px; padding:12px 14px; text-align:center;}
+  .kpi .v{font-size:20px; font-weight:700; color:var(--azul); display:block;}
+  .kpi .l{font-size:11.5px; color:var(--gris); text-transform:uppercase; letter-spacing:.3px;}
+  ul,ol{margin:8px 0 8px 4px; padding-left:22px;}
+  li{margin:4px 0;}
+  .footer{margin-top:34px; padding-top:14px; border-top:1px solid var(--borde);
+          font-size:11.5px; color:#7a7a7a;}
+  @media print{
+    body{background:#fff;}
+    .page{box-shadow:none; margin:0; max-width:100%; padding:0 8mm;}
+    h2{page-break-after:avoid;} table,pre,.callout{page-break-inside:avoid;}
+    @page{size:A4; margin:16mm 12mm;}
+  }
+  @media screen{
+    .print-hint{position:fixed; top:12px; right:12px; background:var(--azul);
+      color:#fff; padding:9px 14px; border-radius:6px; font-size:12.5px;
+      box-shadow:0 2px 8px rgba(0,0,0,.2);}
+  }
+  @media print{.print-hint{display:none;}}
+</style>
+</head>
+<body>
+<div class="print-hint">Para PDF: Ctrl/Cmd + P &rarr; Guardar como PDF</div>
+<div class="page">
+
+  <h1>Informe de Prefactibilidad</h1>
+  <p class="subtitle">Sistema de Generación Fotovoltaica Residencial con Configuración
+  Net Billing y Respaldo con Batería de Litio</p>
+
+  <div class="meta">
+    <b>Ubicación:</b> Colono María Seidel 2504, Puerto Montt, Región de Los Lagos<br>
+    <b>Cliente:</b> Cesar Barria Oyarzo &nbsp;|&nbsp; N° Cliente SAESA 10982361 &nbsp;|&nbsp; Medidor N° 3101198<br>
+    <b>Tarifa actual:</b> BT1 (baja tensión residencial) &nbsp;|&nbsp; Potencia conectada 6,0 kW<br>
+    <b>Distribuidora:</b> Sociedad Austral de Electricidad S.A. (SAESA)<br>
+    <b>Fecha:</b> Julio 2026 &nbsp;|&nbsp; <b>Nivel:</b> Prefactibilidad (Clase 4, ±25–30 %)
+  </div>
+
+  <h2>1. Resumen Ejecutivo</h2>
+  <p>Se evalúa la instalación de un sistema fotovoltaico (FV) conectado a la red bajo
+  modalidad <b>Net Billing</b> (Ley 21.118), con <b>batería de litio (LiFePO4)</b> para
+  autoconsumo nocturno y respaldo, en una vivienda de Puerto Montt cuyo consumo promedio
+  es de <b>93,53 kWh/mes (≈ 1.122 kWh/año)</b>.</p>
+
+  <div class="kpi">
+    <div><span class="v">1,65 kWp</span><span class="l">Potencia FV</span></div>
+    <div><span class="v">3 kW</span><span class="l">Inversor híbrido</span></div>
+    <div><span class="v">5,12 kWh</span><span class="l">Batería LiFePO4</span></div>
+    <div><span class="v">1.550 kWh</span><span class="l">Generación/año</span></div>
+  </div>
+  <div class="kpi">
+    <div><span class="v">$4.310.250</span><span class="l">Inversión (CAPEX)</span></div>
+    <div><span class="v bad-t">–$2.032.020</span><span class="l">VAN (8%)</span></div>
+    <div><span class="v bad-t">1,4 %</span><span class="l">TIR</span></div>
+    <div><span class="v warn-t">18,2 años</span><span class="l">PRI</span></div>
+  </div>
+
+  <div class="callout warn">
+    <b>Conclusión anticipada:</b> el proyecto es <span class="ok-t">técnicamente viable</span>
+    y cumple la normativa vigente, pero <span class="bad-t">no es rentable financieramente</span>
+    con el consumo actual. El bajo consumo del cliente y el alto costo de la batería producen
+    un VAN negativo. La batería se justifica como <b>inversión de respaldo/resiliencia</b>
+    (continuidad de servicio ante interrupciones frecuentes en la zona sur), no como una
+    inversión de retorno económico.
+  </div>
+
+  <h2>2. Objetivo y Alcance</h2>
+  <p>Diseñar a nivel de prefactibilidad un sistema de generación en base al recurso solar,
+  dimensionando paneles, inversor, batería, materiales y protecciones; valorizar los
+  componentes físicos y los recursos humanos; y evaluar la inversión mediante los indicadores
+  VAN, TIR y PRI, conforme a la normativa chilena vigente y a las buenas prácticas del mercado.</p>
+
+  <h2>3. Análisis del Recurso Natural Renovable Disponible</h2>
+  <h3>3.1 Localización</h3>
+  <ul>
+    <li><b>Comuna:</b> Puerto Montt, Región de Los Lagos.</li>
+    <li><b>Latitud:</b> −41,47° &nbsp;|&nbsp; <b>Longitud:</b> −72,94°.</li>
+    <li><b>Clima:</b> templado lluvioso oceánico, con alta nubosidad y estacionalidad marcada.</li>
+  </ul>
+  <h3>3.2 Recurso solar (Explorador Solar – Ministerio de Energía / metodología PVGIS)</h3>
+  <table class="num">
+    <tr><th>Indicador</th><th>Valor estimado</th></tr>
+    <tr><td>Irradiación / HSP promedio anual (plano inclinado 35°)</td><td><b>3,3 kWh/m²/día</b></td></tr>
+    <tr><td>HSP verano (Dic–Ene)</td><td>≈ 5,5 kWh/m²/día</td></tr>
+    <tr><td>HSP invierno (Jun–Jul)</td><td>≈ 1,3 kWh/m²/día</td></tr>
+    <tr><td>Ángulo de inclinación óptimo</td><td>≈ 35–40° (≈ latitud)</td></tr>
+    <tr><td>Orientación óptima</td><td>Norte franco (azimut 0°)</td></tr>
+  </table>
+  <h3>3.3 Requerimientos mínimos de viabilidad</h3>
+  <ul>
+    <li><b>Irradiación mínima recomendada:</b> &gt; 3,0 kWh/m²/día → <span class="ok-t">se cumple</span> (3,3).</li>
+    <li><b>Superficie de techo:</b> ≈ 10 m² con orientación norte, libre de sombras. <i>A verificar en visita técnica.</i></li>
+    <li><b>Estructura de soporte:</b> capacidad para ≈ 15 kg/panel.</li>
+  </ul>
+  <div class="callout ok"><b>Veredicto del recurso: VIABLE.</b> Recurso modesto pero suficiente.
+  La fuerte estacionalidad hace recomendable el net billing para "banquear" excedentes de verano.</div>
+
+  <h2>4. Determinación del Consumo Energético</h2>
+  <p>Datos obtenidos de la boleta electrónica SAESA N° 76633459.</p>
+  <h3>4.1 Consumo histórico (últimos 13 meses)</h3>
+  <table class="num">
+    <tr><th>Mes</th><th>kWh</th><th>Mes</th><th>kWh</th></tr>
+    <tr><td>May-25</td><td>76</td><td>Dic-25</td><td>120</td></tr>
+    <tr><td>Jun-25</td><td>106</td><td>Ene-26</td><td>134 (máx)</td></tr>
+    <tr><td>Jul-25</td><td>93</td><td>Feb-26</td><td>116</td></tr>
+    <tr><td>Ago-25</td><td>56 (mín)</td><td>Mar-26</td><td>112</td></tr>
+    <tr><td>Sep-25</td><td>91</td><td>Abr-26</td><td>88</td></tr>
+    <tr><td>Oct-25</td><td>85</td><td>May-26</td><td>87</td></tr>
+    <tr><td>Nov-25</td><td>61</td><td></td><td></td></tr>
+  </table>
+  <h3>4.2 Parámetros de diseño</h3>
+  <table class="num">
+    <tr><th>Parámetro</th><th>Valor</th></tr>
+    <tr><td>Consumo promedio mensual (boleta)</td><td><b>93,53 kWh/mes</b></td></tr>
+    <tr><td>Consumo anual de diseño</td><td><b>1.122 kWh/año</b></td></tr>
+    <tr><td>Consumo diario promedio</td><td>≈ 3,1 kWh/día</td></tr>
+    <tr><td>Mes de mayor consumo</td><td>Enero (134 kWh)</td></tr>
+    <tr><td>Mes de menor consumo</td><td>Agosto (56 kWh)</td></tr>
+    <tr><td>Costo variable de energía (referencia boleta)</td><td>≈ $222–255 /kWh</td></tr>
+  </table>
+
+  <h2>5. Diseño de Prefactibilidad del Sistema</h2>
+  <h3>5.1 Normativa y marco regulatorio</h3>
+  <ul>
+    <li><b>Ley 21.118</b> (Net Billing / Generación Distribuida): autogeneración con ERNC e inyección de excedentes, hasta 300 kW.</li>
+    <li><b>NCh Elec. 4/2003</b>: instalaciones eléctricas de consumo en baja tensión.</li>
+    <li><b>Pliego técnico RGR N°02 (SEC)</b> para generación distribuida.</li>
+    <li><b>Declaración TE-4 ante la SEC</b> por instalador eléctrico autorizado.</li>
+    <li><b>Solicitud de conexión y medidor bidireccional</b> ante SAESA.</li>
+    <li>Equipos con <b>certificación SEC</b> obligatoria.</li>
+  </ul>
+  <h3>5.2 Dimensionamiento del generador fotovoltaico</h3>
+<pre>Rendimiento específico (yield) = HSP x 365 x PR
+                               = 3,3 x 365 x 0,78 = 940 kWh/kWp/año
+
+Potencia teórica (100% consumo) = 1.122 / 940 = 1,19 kWp
+Potencia adoptada = 3 x 550 W   = 1,65 kWp
+Generación anual  = 1,65 x 940  = 1.550 kWh/año  (138% del consumo)</pre>
+  <p>El sobredimensionamiento (1,65 vs 1,19 kWp) cubre pérdidas de batería (round-trip ≈ 90 %),
+  degradación de paneles (0,7 %/año) y la estacionalidad invernal.</p>
+  <h3>5.3 Inversor</h3>
+  <p>Inversor híbrido monofásico <b>3 kW</b>, con MPPT integrado, gestión de batería de litio
+  y función de respaldo (backup) ante corte de red. Ratio DC/AC conservador que permite
+  ampliación futura.</p>
+  <h3>5.4 Batería de litio</h3>
+<pre>Batería LiFePO4 48V / 100Ah = 5,12 kWh nominales
+Energía útil (DoD 90%)      = 4,61 kWh
+Autonomía ~ 4,61 / 3,1      = 1,5 días de consumo</pre>
+  <p>Química <b>LiFePO4</b> por seguridad, vida útil (&gt; 6.000 ciclos) y tolerancia al clima frío.
+  Función: desplazar el autoconsumo al horario nocturno y dar respaldo ante cortes.</p>
+  <h3>5.5 Balance energético anual (Net Billing)</h3>
+  <table class="num">
+    <tr><th>Flujo</th><th>kWh/año</th></tr>
+    <tr><td>Generación FV</td><td>1.550</td></tr>
+    <tr><td>Autoconsumo (directo + batería)</td><td>1.010</td></tr>
+    <tr><td>Importación desde la red</td><td>112</td></tr>
+    <tr><td><b>Excedente inyectado a la red</b></td><td><b>540</b></td></tr>
+  </table>
+  <h3>5.6 Materiales y protecciones (NCh Elec 4/2003)</h3>
+  <ul>
+    <li>Estructura de aluminio anodizado + tornillería inoxidable.</li>
+    <li>Cable solar 4–6 mm² (DC), conectores MC4.</li>
+    <li>Protecciones DC: fusibles gPV, seccionador DC, descargador (DPS).</li>
+    <li>Protecciones AC: interruptor automático, diferencial, DPS AC.</li>
+    <li>Puesta a tierra (SPT) de estructura y equipos.</li>
+    <li>Medidor bidireccional (habilitado por la distribuidora).</li>
+  </ul>
+
+  <h2>6. Valorización de Componentes Físicos (CAPEX de equipos)</h2>
+  <p>Valores referenciales de mercado chileno 2025–2026 (IVA incluido), en CLP.</p>
+  <table class="num">
+    <tr><th>Ítem</th><th>Total CLP</th></tr>
+    <tr><td>Panel solar 550 W monocristalino (x3)</td><td>225.000</td></tr>
+    <tr><td>Inversor híbrido 3 kW (MPPT, apto litio)</td><td>650.000</td></tr>
+    <tr><td>Batería LiFePO4 48V/100Ah (5,12 kWh)</td><td>1.400.000</td></tr>
+    <tr><td>Estructura de montaje de aluminio</td><td>150.000</td></tr>
+    <tr><td>Cableado solar, conectores MC4 y canalización</td><td>120.000</td></tr>
+    <tr><td>Tablero + protecciones DC/AC</td><td>180.000</td></tr>
+    <tr><td>Puesta a tierra (SPT)</td><td>120.000</td></tr>
+    <tr><td>Medidor bidireccional / adecuaciones</td><td>80.000</td></tr>
+    <tr><td>Materiales menores y ferretería</td><td>80.000</td></tr>
+    <tr><td><b>Subtotal materiales y equipos</b></td><td><b>3.005.000</b></td></tr>
+  </table>
+  <p style="font-size:12.5px;"><i>Referencias:</i> kits híbridos con inversor 3.000 W desde
+  ≈ $990.000 (Solares Center Chile); paneles 550–585 W ≈ $60.000–90.000 c/u; baterías
+  LiFePO4 48V/100Ah ≈ $1,2–1,8 MM.</p>
+
+  <h2>7. Valorización de Recursos Humanos</h2>
+  <table class="num">
+    <tr><th>Ítem</th><th>Total CLP</th></tr>
+    <tr><td>Proyecto eléctrico + tramitación TE-4/SEC (ing. autorizado)</td><td>350.000</td></tr>
+    <tr><td>Instalación (instalador SEC clase D + ayudante, 2 pers. x 3 días)</td><td>600.000</td></tr>
+    <tr><td>Puesta en marcha, pruebas y capacitación</td><td>150.000</td></tr>
+    <tr><td><b>Subtotal recursos humanos</b></td><td><b>1.100.000</b></td></tr>
+  </table>
+  <h3>7.1 Inversión total del proyecto (CAPEX)</h3>
+  <table class="num">
+    <tr><th>Concepto</th><th>CLP</th></tr>
+    <tr><td>Materiales y equipos</td><td>3.005.000</td></tr>
+    <tr><td>Recursos humanos</td><td>1.100.000</td></tr>
+    <tr><td>Contingencia (5 %)</td><td>205.250</td></tr>
+    <tr><td><b>INVERSIÓN TOTAL</b></td><td><b>4.310.250</b></td></tr>
+  </table>
+
+  <h2>8. Indicadores de Evaluación (VAN, TIR, PRI)</h2>
+  <h3>8.1 Supuestos</h3>
+  <table class="num">
+    <tr><th>Parámetro</th><th>Valor</th></tr>
+    <tr><td>Horizonte de evaluación</td><td>20 años</td></tr>
+    <tr><td>Tasa de descuento</td><td>8 %</td></tr>
+    <tr><td>Precio energía evitada (autoconsumo)</td><td>$230 /kWh</td></tr>
+    <tr><td>Precio de inyección (net billing)</td><td>$80 /kWh</td></tr>
+    <tr><td>Escalación tarifaria real</td><td>4 % anual</td></tr>
+    <tr><td>Degradación FV</td><td>0,7 % anual</td></tr>
+    <tr><td>O&amp;M (año 1)</td><td>$50.000, +3 % anual</td></tr>
+    <tr><td>Reemplazo de batería (año 10)</td><td>$1.200.000</td></tr>
+  </table>
+  <h3>8.2 Resultados — Escenario base (FV + batería)</h3>
+  <table>
+    <tr><th>Indicador</th><th>Resultado</th><th>Criterio</th><th>Evaluación</th></tr>
+    <tr><td>Beneficio neto año 1</td><td>$225.485</td><td>—</td><td>—</td></tr>
+    <tr><td><b>VAN (8 %)</b></td><td class="bad-t">–$2.032.020</td><td>VAN &gt; 0</td><td class="bad-t">No conviene</td></tr>
+    <tr><td><b>TIR</b></td><td class="bad-t">1,4 %</td><td>TIR &gt; 8 %</td><td class="bad-t">Inferior a la tasa</td></tr>
+    <tr><td><b>PRI simple</b></td><td class="warn-t">18,2 años</td><td>&lt; vida útil</td><td class="warn-t">Muy largo</td></tr>
+    <tr><td>PRI descontado</td><td>&gt; 20 años</td><td>—</td><td class="bad-t">No se recupera</td></tr>
+  </table>
+  <h3>8.3 Resultados — Escenario B de referencia (FV sin batería)</h3>
+  <table class="num">
+    <tr><th>Indicador</th><th>Resultado</th></tr>
+    <tr><td>CAPEX</td><td>$2.710.250</td></tr>
+    <tr><td>VAN (8 %)</td><td>–$823.699</td></tr>
+    <tr><td>TIR</td><td>4,0 %</td></tr>
+    <tr><td>PRI simple</td><td>14,4 años</td></tr>
+  </table>
+  <h3>8.4 Interpretación</h3>
+  <ul>
+    <li>El <b>VAN negativo</b> en ambos escenarios indica que, con el consumo actual, el proyecto no genera valor económico al 8 %.</li>
+    <li>La <b>batería agrega ≈ $1,6 MM</b> (compra + reemplazo) que no se recupera: destruye ≈ $1,2 MM de VAN adicional.</li>
+    <li>El problema es de <b>escala</b>: el consumo es demasiado bajo para amortizar el costo fijo de un sistema con almacenamiento.</li>
+  </ul>
+
+  <h2>9. Conclusiones y Recomendaciones</h2>
+  <ol>
+    <li><b>Recurso solar:</b> viable (3,3 kWh/m²/día). Proyecto técnicamente factible y conforme a la normativa.</li>
+    <li><b>Económicamente NO es rentable</b> para el consumo actual: VAN negativo, TIR &lt; tasa de descuento, PRI &gt; 18 años.</li>
+    <li><b>La batería</b> es una inversión de respaldo/resiliencia, no de retorno. Si el objetivo es puramente económico, se recomienda omitirla.</li>
+    <li><b>Para mejorar la viabilidad:</b>
+      <ul>
+        <li>Evaluar el sistema si aumenta el consumo (calefacción eléctrica, vehículo eléctrico).</li>
+        <li>Priorizar primero eficiencia energética (LED, aislamiento).</li>
+        <li>Si se requiere respaldo, dimensionar la batería solo a las cargas críticas.</li>
+        <li>Cotizar en firme con al menos 3 proveedores certificados SEC.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <div class="footer">
+    Documento a nivel de prefactibilidad. Los valores de equipos y mano de obra son
+    referenciales de mercado y deben confirmarse con cotizaciones formales. El recurso solar
+    debe validarse con el Explorador Solar del Ministerio de Energía para las coordenadas
+    exactas y con visita técnica de sombreado. Anexos: <b>calculos_fv.py</b> (motor de cálculo)
+    y <b>resultados_calculos.txt</b> (salida numérica).
+  </div>
+
+</div>
+</body>
+</html>
